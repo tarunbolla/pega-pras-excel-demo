@@ -15,7 +15,7 @@
     <!-- Custom properties -->
     <Name>DemoExcel</Name>
     <Id>Project-8D53AA1946D0C71</Id>
-    <Version>8.0.1063.0</Version>
+    <Version>8.0.1087.0</Version>
     <TransformationVersion>8.0.1026.0</TransformationVersion>
     <ConfigurationFile>
     </ConfigurationFile>
@@ -28,7 +28,8 @@
     <CustomUpgradeVersion>0.0</CustomUpgradeVersion>
     <MessageDefinition />
     <DebuggerPlatform>Default</DebuggerPlatform>
-    <InteractionConfigurationFile>..\Interaction.xml</InteractionConfigurationFile>
+    <InteractionConfigurationFile>
+    </InteractionConfigurationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <OutputPath>bin\Debug\</OutputPath>
@@ -72,9 +73,17 @@
   </PropertyGroup>
   <Import Project="$(OpenSpanPath)\OpenSpan.targets" />
   <ItemGroup>
+    <Reference Include="Interop.FREngine, Version=11.1.19.72, Culture=neutral, PublicKeyToken=2e1e7aca5d298f96">
+      <HintPath>$(OPENSPAN_APPLICATION_PATH)\Interop.FREngine.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821">
       <HintPath>$(OPENSPAN_APPLICATION_PATH)\log4net.dll</HintPath>
       <Private>False</Private>
+    </Reference>
+    <Reference Include="OpenSpan">
+      <Private>False</Private>
+      <HintPath>$(OPENSPAN_APPLICATION_PATH)\OpenSpan.dll</HintPath>
     </Reference>
     <Reference Include="OpenSpan.Adapters, Version=8.0.0.0, Culture=neutral, PublicKeyToken=f5db91edc02d8c5e">
       <HintPath>$(OPENSPAN_APPLICATION_PATH)\OpenSpan.Adapters.dll</HintPath>
@@ -85,6 +94,10 @@
       <Private>False</Private>
     </Reference>
     <Reference Include="OpenSpan.Automation">
+      <Private>False</Private>
+      <HintPath>$(OPENSPAN_APPLICATION_PATH)\OpenSpan.Automation.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenSpan.Automation, Version=8.0.0.0, Culture=neutral, PublicKeyToken=f5db91edc02d8c5e">
       <Private>False</Private>
       <HintPath>$(OPENSPAN_APPLICATION_PATH)\OpenSpan.Automation.dll</HintPath>
     </Reference>
@@ -147,18 +160,17 @@
     <Reference Include="System.Xml">
       <Private>False</Private>
     </Reference>
-    <Reference Include="OpenSpan">
+    <Reference Include="OpenSpan, Version=8.0.0.0, Culture=neutral, PublicKeyToken=f5db91edc02d8c5e">
       <HintPath>$(OPENSPAN_APPLICATION_PATH)\OpenSpan.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="OpenSpan.Runtime.Core">
+    <Reference Include="OpenSpan.Runtime.Core, Version=8.0.0.0, Culture=neutral, PublicKeyToken=f5db91edc02d8c5e">
       <HintPath>$(OPENSPAN_APPLICATION_PATH)\OpenSpan.Runtime.Core.dll</HintPath>
       <Private>False</Private>
     </Reference>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Events" />
-    <Folder Include="Events\Interactions" />
     <Folder Include="Procedures" />
     <Folder Include="Properties\" />
   </ItemGroup>
@@ -175,14 +187,6 @@
       <SubType>Component</SubType>
       <Id>Automator-8D53B348BCA7280</Id>
     </Compile>
-    <Compile Include="Demo_P_Cast_To_Range.os">
-      <SubType>Component</SubType>
-      <Id>Automator-8D53AF1542A9176</Id>
-    </Compile>
-    <Compile Include="Demo_P_Cast_To_WorkSheet.os">
-      <SubType>Component</SubType>
-      <Id>Automator-8D53AA3CD4DFDD0</Id>
-    </Compile>
     <Compile Include="Demo_E_AllProjectsStarted.os">
       <SubType>Component</SubType>
       <Id>Automator-8D53AEC76F2A6E0</Id>
@@ -191,41 +195,49 @@
       <SubType>Component</SubType>
       <Id>Automator-8D53AA217ABD62C</Id>
     </Compile>
-    <Compile Include="Demo_P_CopyRangeFromSheet.os">
-      <SubType>Component</SubType>
-      <Id>Automator-8D53AF13F44C275</Id>
-    </Compile>
-    <Compile Include="Demo_P_GetSheetByName.os">
-      <SubType>Component</SubType>
-      <Id>Automator-8D53AEC9D8E3A30</Id>
-    </Compile>
     <Compile Include="Demo_E_ExcelSheet_Activated.os">
       <SubType>Component</SubType>
       <Id>Automator-8D53AA501660FD0</Id>
-    </Compile>
-    <Compile Include="Demo_P_GetUsedRangeForSheet.os">
-      <SubType>Component</SubType>
-      <Id>Automator-8D540A8F1FCACEA</Id>
-    </Compile>
-    <Compile Include="Demo_P_GotoSheet.os">
-      <SubType>Component</SubType>
-      <Id>Automator-8D53B159F5CC3D0</Id>
-    </Compile>
-    <Compile Include="Demo_P_ReturnDataTableForRange.os">
-      <SubType>Component</SubType>
-      <Id>Automator-8D53B34D7853250</Id>
     </Compile>
     <Compile Include="ExcelQuery.os">
       <SubType>Component</SubType>
       <Id>DesignForm-8D53AA1BDDF1678</Id>
     </Compile>
-    <Compile Include="Procedures\Demo_P_CheckAgentStatusInSMA.os">
+    <Compile Include="Procedures\Demo_P_Cast_To_Range.os">
       <SubType>Component</SubType>
-      <Id>Automator-8D54153782561C0</Id>
+      <Id>Automator-8D53AF1542A9176</Id>
     </Compile>
-    <Compile Include="Procedures\Demo_P_StartInteraction.os">
+    <Compile Include="Procedures\Demo_P_Cast_To_DataRow.os">
       <SubType>Component</SubType>
-      <Id>Automator-8D541534CC01160</Id>
+      <Id>Automator-8D5B661C6B58228</Id>
+    </Compile>
+    <Compile Include="Procedures\Demo_P_Cast_To_WorkSheet.os">
+      <SubType>Component</SubType>
+      <Id>Automator-8D53AA3CD4DFDD0</Id>
+    </Compile>
+    <Compile Include="Procedures\Demo_P_CopyRangeFromSheet.os">
+      <SubType>Component</SubType>
+      <Id>Automator-8D53AF13F44C275</Id>
+    </Compile>
+    <Compile Include="Procedures\Demo_P_GetSheetByName.os">
+      <SubType>Component</SubType>
+      <Id>Automator-8D53AEC9D8E3A30</Id>
+    </Compile>
+    <Compile Include="Procedures\Demo_P_GetUsedRangeForSheet.os">
+      <SubType>Component</SubType>
+      <Id>Automator-8D540A8F1FCACEA</Id>
+    </Compile>
+    <Compile Include="Procedures\Demo_P_GotoSheet.os">
+      <SubType>Component</SubType>
+      <Id>Automator-8D53B159F5CC3D0</Id>
+    </Compile>
+    <Compile Include="Procedures\Demo_P_ReturnDataTableForRange.os">
+      <SubType>Component</SubType>
+      <Id>Automator-8D53B34D7853250</Id>
+    </Compile>
+    <Compile Include="_Demo_GC.HelperScripts.cs">
+      <DependentUpon>_Demo_GC.os</DependentUpon>
+      <Id>Script-8D5B65FEC42AD8F</Id>
     </Compile>
     <Compile Include="_Demo_GC.os">
       <SubType>Component</SubType>
@@ -241,12 +253,5 @@
       <Isolated>False</Isolated>
       <WrapperTool>primary</WrapperTool>
     </COMReference>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\SMAWebAdapter\SMAWebAdapter.osproj">
-      <Name>SMAWebAdapter</Name>
-      <Project>{e8851c71-60bc-493d-b2da-18fb7ab7dc60}</Project>
-      <Private>True</Private>
-    </ProjectReference>
   </ItemGroup>
 </Project>

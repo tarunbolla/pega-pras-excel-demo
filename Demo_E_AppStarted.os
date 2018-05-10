@@ -3,14 +3,14 @@
     <Type Value="OpenSpan.Automation.Automator" />
     <Assembly Value="OpenSpan.Automation" />
     <AssemblyReferences>
+      <Assembly Value="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+      <Assembly Value="System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
       <Assembly Value="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
       <Assembly Value="Microsoft.Office.Interop.Excel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" />
-      <Assembly Value="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
       <Assembly Value="OpenSpan, Version=8.0.0.0, Culture=neutral, PublicKeyToken=f5db91edc02d8c5e" />
       <Assembly Value="OpenSpan.Automation, Version=8.0.0.0, Culture=neutral, PublicKeyToken=f5db91edc02d8c5e" />
       <Assembly Value="OpenSpan.Controls, Version=8.0.0.0, Culture=neutral, PublicKeyToken=f5db91edc02d8c5e" />
       <Assembly Value="OpenSpan.Office, Version=8.0.0.0, Culture=neutral, PublicKeyToken=f5db91edc02d8c5e" />
-      <Assembly Value="System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
     </AssemblyReferences>
     <DynamicAssemblyReferences />
     <FileReferences />
@@ -107,7 +107,7 @@
             <Top Value="200" />
             <Collapsed Value="False" />
             <WillExecute Value="True" />
-            <InstanceName Value="Cast_To_WorkSheet" />
+            <InstanceName Value="Demo_P_Cast_To_WorkSheet" />
             <OverriddenIds />
           </ConnectionBlock>
           <ConnectionBlock>
@@ -159,7 +159,7 @@
             </LinkPoints>
           </Link>
           <Link PartID="19" Sensitive="False" Asynchronous="False" LogBeforeExecution="" LogAfterExecution="">
-            <From PartID="1" PortName="Raised" PortType="Event" ConnectableId="Automator-8D53AA217ABD62C\ConnectableEvent-8D53AA222A62D1C" MemberComponentId="Automator-8D53AA217ABD62C\EMPTY" />
+            <From PartID="1" PortName="Raised" PortType="Event" ConnectableId="Automator-8D53AA217ABD62C\ConnectableEvent-8D53AA222A62D1C" MemberComponentId="Automator-8D53AA217ABD62C\ConnectableEvent-8D53AA222A62D1C" />
             <To PartID="17" PortName="DoWork" PortType="Method" ConnectableId="Automator-8D53AA217ABD62C\ConnectableMethod-8D53AA3780B3590" MemberComponentId="Automator-8D53AA217ABD62C\ConnectableMethod-8D53AA3780B3590" />
             <LinkPoints>
               <Point value="140, 69" />
@@ -222,12 +222,10 @@
             <From PartID="27" PortName="Result" PortType="Property" ConnectableId="Automator-8D53AA217ABD62C\ConnectableMethod-8D53AA3F4886930" MemberComponentId="Automator-8D53AA217ABD62C\ConnectableMethod-8D53AA3F4886930" />
             <To PartID="32" PortName="Instance" PortType="Property" ConnectableId="Automator-8D53AA217ABD62C\ConnectableTypeProxy-8D53AA40FD3B730" MemberComponentId="Automator-8D53AA217ABD62C\TypeProxy-8D53AA40FCF2350" />
             <LinkPoints>
-              <Point value="756, 280" />
-              <Point value="766, 280" />
-              <Point value="772, 280" />
-              <Point value="772, 300" />
-              <Point value="572, 300" />
-              <Point value="572, 365" />
+              <Point value="817, 280" />
+              <Point value="827, 280" />
+              <Point value="827, 323" />
+              <Point value="575, 323" />
               <Point value="575, 365" />
               <Point value="585, 365" />
             </LinkPoints>
@@ -248,10 +246,10 @@
             <From PartID="27" PortName="Complete" PortType="Event" ConnectableId="Automator-8D53AA217ABD62C\ConnectableMethod-8D53AA3F4886930" MemberComponentId="Automator-8D53AA3CD4DFDD0\ExitPoint-8D53AA3DB396060" />
             <To PartID="18" PortName="DoWork" PortType="Method" ConnectableId="Automator-8D53AA217ABD62C\ConnectableMethod-8D53AA37A610C70" MemberComponentId="Automator-8D53AA217ABD62C\ConnectableMethod-8D53AA37A610C70" />
             <LinkPoints>
-              <Point value="756, 246" />
-              <Point value="766, 246" />
-              <Point value="791, 246" />
-              <Point value="791, 349" />
+              <Point value="817, 246" />
+              <Point value="827, 246" />
+              <Point value="827, 297" />
+              <Point value="815, 297" />
               <Point value="815, 349" />
               <Point value="825, 349" />
             </LinkPoints>
@@ -260,9 +258,6 @@
         <Comments />
         <SubGraphs />
       </AutomationDocument>
-      <DocumentPosition Value="Binary">
-        <Binary>AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJhd2luZy5Qb2ludEYCAAAAAXgBeQAACwsCAAAAAAAdQwAA4EIL</Binary>
-      </DocumentPosition>
     </OpenSpan.Automation.Automator>
     <OpenSpan.Automation.ConnectableEvent Name="connectableEvent1" Id="ConnectableEvent-8D53AA222A62D1C">
       <ComponentName Value="ExcelQuery" />
@@ -314,7 +309,7 @@
       <ComponentName Value="_WorkbookProxy1" />
       <DisplayName Value="Proxy" />
       <ExceptionsHandled Value="False" />
-      <InstanceTypeName Value="OpenSpan.Design.TypeProxy" />
+      <InstanceTypeName Value="Microsoft.Office.Interop.Excel._Workbook" />
       <InstanceUniqueId Value="Automator-8D53AA217ABD62C\TypeProxy-8D53AA298483070" />
       <MemberDetails Value="" />
       <ProxiedTypeName Value="Microsoft.Office.Interop.Excel._Workbook" />
@@ -420,7 +415,7 @@
       </Content>
     </OpenSpan.Automation.ConnectableMethod>
     <OpenSpan.Automation.ConnectableMethod Name="connectableMethod3" Id="ConnectableMethod-8D53AA3F4886930">
-      <ComponentName Value="Cast_To_WorkSheet" />
+      <ComponentName Value="Demo_P_Cast_To_WorkSheet" />
       <DisplayName Value="Execute" />
       <ExceptionsHandled Value="False" />
       <InstanceTypeName Value="OpenSpan.Automation.Automator" />
@@ -476,7 +471,7 @@
       <ComponentName Value="_WorksheetProxy1" />
       <DisplayName Value="Proxy" />
       <ExceptionsHandled Value="False" />
-      <InstanceTypeName Value="OpenSpan.Design.TypeProxy" />
+      <InstanceTypeName Value="Microsoft.Office.Interop.Excel._Worksheet" />
       <InstanceUniqueId Value="Automator-8D53AA217ABD62C\TypeProxy-8D53AA40FCF2350" />
       <MemberDetails Value="" />
       <ProxiedTypeName Value="Microsoft.Office.Interop.Excel._Worksheet" />
